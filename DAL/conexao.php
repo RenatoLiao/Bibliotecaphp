@@ -1,4 +1,7 @@
 <?php
+    namespace DAL;
+
+    use PDO;
     class Conexao{
         private static $dbNome = 'biblioteca';
         private static $dbHost = 'localhost';
