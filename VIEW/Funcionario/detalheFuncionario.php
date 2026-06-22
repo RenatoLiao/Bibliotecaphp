@@ -29,15 +29,15 @@
             <form action="" method="post" class="col s10">
                 
                 <div class="input-field col s10">
-                    <h5>ID: <?php echo $livro->getId(); ?></h5>
+                    <h5>ID: <?php echo $funcionario->getId(); ?></h5>
                 </div>
 
                 <div class="input-field col s10">
-                    <h5>Nome: <?php echo $livro->getNome(); ?></h5>
+                    <h5>Nome: <?php echo $funcionario->getNome(); ?></h5>
                 </div>
             
                 <div class="input-field col s10">
-                    <h5>Telefone: <?php echo $livro->getTelefone(); ?></h5>
+                    <h5>Telefone: <?php echo $funcionario->getTelefone(); ?></h5>
                 </div>
 
                 <div class="row center col s8">

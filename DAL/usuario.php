@@ -25,5 +25,41 @@
             return $usuario;
         }
 
+        public function Insert(\MODEL\Usuario $usuario){
+            $sql = "INSERT INTO usuario(login, senha)
+                VALUES('{$usuario->getLogin()}', '{$usuario->getSenha()}');";
+            $con = Conexao::conectar();
+            $result = $con->query($sql);
+            $con = Conexao::desconectar();
+
+            echo $result->errorCode();
+
+            return $result;
+        }
+
+        public function Select() {
+            $sql = "SELECT * FROM usuario;";
+            $con = Conexao::conectar();
+            $registro = $con->query($sql);
+            $con = Conexao::desconectar();
+
+            $listaUsuario = []; 
+
+            if ($registro) {
+                foreach ($registro as $linha) {
+                    $usuario = new \MODEL\Usuario();
+                    $usuario->setId((int)$linha['id']);
+                    $usuario->setLogin($linha['login']);
+                    $usuario->setSenha($linha['senha']); 
+
+                    $listaUsuario[] = $usuario;
+                }
+            }
+
+            return $listaUsuario;
+        }        
+     
+        
+        
     }
 ?>

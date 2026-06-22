@@ -26,24 +26,20 @@
             <h1 class="center">Editar Funcionario</h1>
         </div>
         <div class="row col s12 blue lighten-4">
-            <form action="opeditarlivro.php" method="post" class="col s10">
-                
+            <form action="opeditarfuncionario.php" method="post" class="col s10">
                 <div class="input-field col s10">
                     <label for="id" class="black-text">ID: <?php echo $funcionario->getId() ?></label>
                     <br><br>
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
-
                 <div class="input-field col s10">
-                    <input placeholder="Informar a nome" id="nome" name="nome" type="text" class="validate" value="<?php echo $livro->getDescricao(); ?>">
+                    <input placeholder="Informar a nome" id="nome" name="nome" type="text" class="validate" value="<?php echo $funcionario->getNome(); ?>">
                     <label for="nomelabel">Nome: </label>
                 </div>
-            
                 <div class="input-field col s10">
-                    <input placeholder="Informar a telefone" id="telefone" name="telefone" type="text" class="validate" value="<?php echo $livro->getQuantidade(); ?>">
+                    <input placeholder="Informar a telefone" id="telefone" name="telefone" type="text" class="validate" value="<?php echo $funcionario->getTelefone(); ?>">
                     <label for="nomelabel">Telefone: </label>
                 </div>
-
                 <div class="row center col s8">
                     <button class="btn waves-effect waves-light" type="submit" name="action">Salvar</button>
                 </div>

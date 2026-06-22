@@ -13,8 +13,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -42,7 +41,7 @@
       	<div class="parallax"><img src="https://alistapart.com/d/438/fig-6--background-blend-mode.jpg"></div>
       	<div class="row"><br>
       		<div class="col s8 offset-m2 offset-s2 center">
-      			<h4 class="truncate bg-card-user blue lighten-3">
+      			<h4 class="truncate bg-card-user blue lighten-3" style="border-radius: 15px">
                     <div>
                         <h4>Login</h4>
                     </div>
@@ -65,6 +64,9 @@
 					      <div class="row">
 					      	<button class="btn waves-effect waves-light" type="submit" name="action">Logar</button>
 					      </div>
+                <div>
+                  <a href="/Bibliotecaphp/VIEW/Usuario/inserirusuario.php" style="font-size: small">criar usuario</a>
+                </div>
 					    </form>
 					  </div>
       			</h4>

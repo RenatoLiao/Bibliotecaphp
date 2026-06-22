@@ -31,16 +31,16 @@
         $linha = $query->fetch(\PDO::FETCH_ASSOC);
         $con = Conexao::desconectar();
 
-        $livro = new \MODEL\Livro();
-        $livro->setId($linha['id']);
-        $livro->setDescricao($linha['nome']);
-        $livro->setQuantidade($linha['telefone']);
+        $funcionario = new \MODEL\Funcionario();
+        $funcionario->setId($linha['id']);
+        $funcionario->setNome($linha['nome']);
+        $funcionario->setTelefone($linha['telefone']);
 
         return $funcionario;
         }
 
-        public function Insert(\MODEL\Livro $funcionario){
-            $sql = "INSERT INTO funcionario(nome, tlefone)
+        public function Insert(\MODEL\Funcionario $funcionario){
+            $sql = "INSERT INTO funcionario(nome, telefone)
                     VALUES('{$funcionario->getNome()}', '{$funcionario->getTelefone()}');";
             $con = Conexao::conectar();
             $result = $con->query($sql);
@@ -52,7 +52,7 @@
         }
 
         public function Delete(int $id){
-        $sql = "DELETE FROM livro WHERE id=?;";
+        $sql = "DELETE FROM funcionario WHERE id=?;";
 
         $con = Conexao::conectar();
         $query = $con->prepare($sql);
@@ -62,8 +62,8 @@
         return $result;
         }
 
-        public function Update(\MODEL\FUncionario $funcionario){
-            $sql = "UPDATE livro SET nome = ?, telefone = ? WHERE id = ?;";
+        public function Update(\MODEL\Funcionario $funcionario){
+            $sql = "UPDATE funcionario SET nome = ?, telefone = ? WHERE id = ?;";
             $con = Conexao::conectar();
             $query = $con->prepare($sql);
             $result = $query->execute(array($funcionario->getNome(), $funcionario->getTelefone(), $funcionario->getId()));

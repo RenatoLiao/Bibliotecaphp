@@ -29,6 +29,7 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="/Bibliotecaphp/VIEW/home.php">Home</a></li>
+            <li><a href="/Bibliotecaphp/VIEW/Emprestimo/listaemprestimo.php">Emprestimo</a></li>
             <li><a href="/Bibliotecaphp/VIEW/Funcionario/listafuncionario.php">Funcionario</a></li>
             <li><a href="/Bibliotecaphp/VIEW/LIVRO/listarlivro.php">Livro</a></li>
             </ul>

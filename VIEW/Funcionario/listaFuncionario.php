@@ -32,7 +32,7 @@
                     <th>ID</th>
                     <th>NOME</th>
                     <th>TELEFONE</th>
-                    <th><a class="btn-floating btn-small waves-effect waves-light red" href="inserirfuncionario.php"><i class="material-icons">add</i></a></th>
+                    <th><a class="btn-floating btn-small waves-effect waves-light green" href="inserirfuncionario.php"><i class="material-icons">add</i></a></th>
                 </tr>
                 <?php
                 foreach($listaFuncionario as $funcionario) { ?>

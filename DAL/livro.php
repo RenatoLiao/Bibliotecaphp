@@ -72,6 +72,14 @@
             return $result;
         }
 
+        public function BaixarEstoque($idLivro) {
+            $sql = "UPDATE livro SET quantidade = quantidade - 1 WHERE id = ?;";
+            $con = Conexao::conectar();
+            $query = $con->prepare($sql);
+            $result = $query->execute(array($idLivro));
+            $con = Conexao::desconectar();
 
+            return $result;
+        }
     }
 ?>
