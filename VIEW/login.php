@@ -13,7 +13,7 @@
     if($usuario != null && $md5 == $usuario->getSenha()){
         session_start();
         $_SESSION['login'] = $usuario;
-        header("location:Funcionario/listaFuncionario.php");
+        header("location:/Bibliotecaphp/VIEW/home.php");
     }
     else header("location:index.php");
 ?>

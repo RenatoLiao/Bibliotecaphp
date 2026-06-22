@@ -2,29 +2,29 @@
     namespace DAL;
 
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/DAL/conexao.php";
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/MODEL/funcionario.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/MODEL/livro.php";
 
-    class Funcionario{
+    class Livro{
         public function Select(){
-            $sql = "Select * from funcionario";
+            $sql = "Select * from livro";
             $con = Conexao::conectar();
             $registro = $con->query($sql);
             $con = Conexao::desconectar();
 
             foreach($registro as $linha){
-                $funcionario = new \MODEL\Funcionario();
-                $funcionario->setId($linha['id']);
-                $funcionario->setNome($linha['nome']);
-                $funcionario->setTelefone($linha['telefone']);
+                $livro = new \MODEL\Livro();
+                $livro->setId($linha['id']);
+                $livro->setDescricao($linha['descricao']);
+                $livro->setQuantidade($linha['quantidade']);
 
-                $listaFuncionario[] = $funcionario;
+                $listalivro[] = $livro;
             }
 
-            return $listaFuncionario;
+            return $listalivro;
         }
 
         public function Selectbyid(int $id){
-        $sql = "Select * from funcionario where id=?;";
+        $sql = "Select * from livro where id=?;";
         $con = Conexao::conectar();
         $query = $con->prepare($sql);
         $query->execute(array($id));
@@ -33,15 +33,15 @@
 
         $livro = new \MODEL\Livro();
         $livro->setId($linha['id']);
-        $livro->setDescricao($linha['nome']);
-        $livro->setQuantidade($linha['telefone']);
+        $livro->setDescricao($linha['descricao']);
+        $livro->setQuantidade($linha['quantidade']);
 
-        return $funcionario;
+        return $livro;
         }
 
-        public function Insert(\MODEL\Livro $funcionario){
-            $sql = "INSERT INTO funcionario(nome, tlefone)
-                    VALUES('{$funcionario->getNome()}', '{$funcionario->getTelefone()}');";
+        public function Insert(\MODEL\Livro $livro){
+            $sql = "INSERT INTO livro(descricao, quantidade)
+                    VALUES('{$livro->getDescricao()}', '{$livro->getQuantidade()}');";
             $con = Conexao::conectar();
             $result = $con->query($sql);
             $con = Conexao::desconectar();
@@ -62,14 +62,16 @@
         return $result;
         }
 
-        public function Update(\MODEL\FUncionario $funcionario){
-            $sql = "UPDATE livro SET nome = ?, telefone = ? WHERE id = ?;";
+        public function Update(\MODEL\Livro $livro){
+            $sql = "UPDATE livro SET descricao = ?, quantidade = ? WHERE id = ?;";
             $con = Conexao::conectar();
             $query = $con->prepare($sql);
-            $result = $query->execute(array($funcionario->getNome(), $funcionario->getTelefone(), $funcionario->getId()));
+            $result = $query->execute(array($livro->getDescricao(), $livro->getQuantidade(), $livro->getId()));
             $con = Conexao::desconectar();
 
             return $result;
         }
+
+
     }
 ?>

@@ -1,4 +1,6 @@
 <?php
+
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/menu.php";
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/DAL/funcionario.php";
     include_once $_SERVER['DOCUMENT_ROOT'] . "/Bibliotecaphp/MODEL/funcionario.php";
 
@@ -38,6 +40,9 @@
                     <td><?php echo $funcionario->getId(); ?></td>
                     <td><?php echo $funcionario->getNome(); ?></td>
                     <td><?php echo $funcionario->getTelefone(); ?> </td>
+                    <td><a class="btn-floating btn-small waves-effect waves-light blue" href="editarfuncionario.php?id=<?php echo $funcionario->getId(); ?>"><i class="material-icons">edit</i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light orange" href="detalhefuncionario.php?id=<?php echo $funcionario->getId(); ?>"><i class="material-icons">remove_red_eye</i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light red" onclick="JavaScript: remover(<?php echo $funcionario->getId(); ?>)"><i class="material-icons">remove_circle</i></a></td>
                 </tr>
                 <?php } ?>
             </table>
@@ -46,3 +51,11 @@
     </div>
 </body>
 </html>
+
+<script>
+    function remover(id) {
+        if (confirm('Deseja excluir o Livro ' + id + '?')) {
+            location.href = 'opremoverfuncionario.php?id=' + id;
+        }
+    }
+</script>
