@@ -58,7 +58,7 @@
                 </div>
                 <div class="row center col s12" style="margin-top: 20px;">
                     <button class="btn waves-effect waves-light green" type="submit" name="action">Salvar Empréstimo</button>
-                    <a href="listaEmprestimo.php" class="btn waves-effect waves-light grey">Voltar</a>
+                    <a href="listaEmprestimo.php" class="btn waves-effect waves-light red">Voltar</a>
                 </div>
             </form>
         </div>

@@ -54,7 +54,7 @@
 
 <script>
     function remover(id) {
-        if (confirm('Deseja excluir o Livro ' + id + '?')) {
+        if (confirm('Deseja excluir o Funcionario ' + id + '?')) {
             location.href = 'opremoverfuncionario.php?id=' + id;
         }
     }

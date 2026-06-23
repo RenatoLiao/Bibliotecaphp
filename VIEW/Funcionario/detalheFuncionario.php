@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="row center col s8">
-                    <a class="waves-effect waves-light btn blue" href="listarfuncionario.php">Voltar</a>
+                    <a class="waves-effect waves-light btn blue" href="listaFuncionario.php">Voltar</a>
                     <a class="waves-effect waves-light btn green" href="editarfuncionario.php?id=<?php echo $funcionario->getId(); ?>">Editar</a>
                     <a class="waves-effect waves-light btn red" onclick="JavaScript: remover(<?php echo $funcionario->getId(); ?>)">Remover</a>
                 </div>
@@ -54,7 +54,7 @@
 
 <script>
     function remover(id) {
-        if (confirm('Deseja excluir o Livro ' + id + '?')) {
+        if (confirm('Deseja excluir o Funcionario ' + id + '?')) {
             location.href = 'opremoverfuncionario.php?id=' + id;
         }
     }

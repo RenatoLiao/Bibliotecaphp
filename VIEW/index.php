@@ -19,18 +19,12 @@
     <link rel="stylesheet" href="css/style.css">
 
      <style>
-        
-        html, body {
-            height: 100%;      
-            margin: 0;          
-        }
-
         body {
             display: flex;
             flex-direction: column;  
             justify-content: center;
             align-items: center;     
-            background-color: #f5f7fa; 
+            background-color: #1a2a3a; 
         }
     </style>
 
@@ -65,7 +59,7 @@
 					      	<button class="btn waves-effect waves-light" type="submit" name="action">Logar</button>
 					      </div>
                 <div>
-                  <a href="/Bibliotecaphp/VIEW/Usuario/inserirusuario.php" style="font-size: small">criar usuario</a>
+                  <a href="/Bibliotecaphp/VIEW/Usuario/inserirusuario.php" style="font-size: 20px">criar usuario</a>
                 </div>
 					    </form>
 					  </div>
